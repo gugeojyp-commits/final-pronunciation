@@ -172,7 +172,7 @@
 <body>
 
 <div class="container">
-  <!-- 상단 수사관 상태 바 (2단계 이상 노출) -->
+  <!-- 상단 수사관 상태 바 -->
   <div id="status-bar" class="hidden">
     <div class="progress-wrap">
       <span id="txt-badge">🎖️ 수사관 배지</span>
@@ -213,8 +213,7 @@
           Mission 01-2. 탈락/첨가/축약 검거<br>
           Mission 02. 연설문 단어 감식<br>
           Mission 03. 한글 자모 발음<br>
-          Mission 04. 소리의 길이 수사<br>
-          Mission 05. 외래어 표준 판결
+          Mission 04. 외래어 표준 판결
         </div>
       </div>
     </div>
@@ -295,86 +294,10 @@
     <div id="err-m3" class="msg-error hidden"></div>
   </div>
 
-  <!-- STAGE 5: MISSION 04 -->
+  <!-- STAGE 5: MISSION 04 (외래어 발음 조사) -->
   <div id="stage-5" class="hidden">
-    <div class="mission-header">⏳ MISSION 04: 소리의 길이 (장단음 탐구 & 제7항)</div>
-    <div class="dialogue-box">
-      <b>대영:</b> 아, 아까 지수 반응을 보니 내가 뭘 잘못한 것 같은데, 그게 뭔지 모르겠어.<br>
-      <b>부연:</b> 음, 그럼 지수랑 솔직하게 대화를 해 보는 게 어때?<br>
-      <b>대영:</b> 음……. 확실히 내 잘못을 <b>묻고</b> 가야겠어.<br>
-      <b>부연:</b> 아니, 솔직하게 대화를 해 보라니까? 이대로 네 잘못을 <b>묻고</b> 끝내지 말고!<br>
-      <b>대영:</b> 그러니까 잘못을 <b>묻는 게 아니라 묻는다고!</b>
-    </div>
-
-    <h4 style="margin-bottom: 8px;">(1) 대영과 부연이 의도하고 이해한 '묻다'의 뜻과 표준 발음 (선택형)</h4>
-    <div class="grid-2">
-      <div class="card-item">
-        <b>📁 대영이 의도한 '묻다'</b>
-        <label style="margin-top: 8px;">대영의 의도 뜻:</label>
-        <select id="m4_ask_m">
-          <option value="">선택하세요...</option>
-          <option value="질문하다">무언가를 질문하다 (물어보다)</option>
-          <option value="파묻다">흙이나 물건 따위로 파묻다 (덮어두다)</option>
-          <option value="얼룩">옷에 얼룩 따위가 번지다</option>
-        </select>
-        <label style="margin-top: 8px;">대영의 의도 표준 발음:</label>
-        <select id="m4_ask_s">
-          <option value="">선택하세요...</option>
-          <option value="긴소리 [묻:꼬]">긴소리 [묻:꼬]</option>
-          <option value="짧은소리 [묻꼬]">짧은소리 [묻꼬]</option>
-        </select>
-      </div>
-      <div class="card-item">
-        <b>📁 부연이 이해한 '묻다'</b>
-        <label style="margin-top: 8px;">부연의 이해 뜻:</label>
-        <select id="m4_bury_m">
-          <option value="">선택하세요...</option>
-          <option value="질문하다">무언가를 질문하다 (물어보다)</option>
-          <option value="파묻다">흙이나 물건 따위로 파묻다 (덮어두다)</option>
-          <option value="얼룩">옷에 얼룩 따위가 번지다</option>
-        </select>
-        <label style="margin-top: 8px;">부연의 이해 표준 발음:</label>
-        <select id="m4_bury_s">
-          <option value="">선택하세요...</option>
-          <option value="짧은소리 [묻꼬]">짧은소리 [묻꼬]</option>
-          <option value="긴소리 [묻:꼬]">긴소리 [묻:꼬]</option>
-        </select>
-      </div>
-    </div>
-
-    <h4 style="margin: 18px 0 8px;">(3) 대영의 마지막 말에 쓰인 '묻는'의 발음 (선택형)</h4>
-    <p style="margin-bottom: 10px;">“그러니까 잘못을 <b>묻는[ 1 ]</b> 게 아니라 <b>묻는[ 2 ]</b>다고!”</p>
-    <div class="grid-2">
-      <div>
-        <label>첫 번째 '묻는' (파묻다) 발음:</label>
-        <select id="m4_mun1">
-          <option value="">선택하세요...</option>
-          <option value="긴소리 [문:는]">긴소리 [문:는]</option>
-          <option value="짧은소리 [문는]">짧은소리 [문는]</option>
-        </select>
-      </div>
-      <div>
-        <label>두 번째 '묻는' (질문하다) 발음:</label>
-        <select id="m4_mun2">
-          <option value="">선택하세요...</option>
-          <option value="긴소리 [문:는]">긴소리 [문:는]</option>
-          <option value="짧은소리 [문는]">짧은소리 [문는]</option>
-        </select>
-      </div>
-    </div>
-
-    <h4 style="margin: 20px 0 8px;">(4) 「표준 발음법」 제6항·제7항에 따른 12개 단어 소리의 길이</h4>
-    <div class="info-box">💡 제6항: 첫음절에서만 긴소리 원칙. 제7항: 단음절 용언 어간에 모음 어미 결합 시 짧게 발음.</div>
-    <div class="grid-4" id="box-len"></div>
-
-    <button class="btn" onclick="checkMission4()">⏱️ 소리의 길이 판정 및 다음 미션으로 (클릭)</button>
-    <div id="err-m4" class="msg-error hidden"></div>
-  </div>
-
-  <!-- STAGE 6: MISSION 05 -->
-  <div id="stage-6" class="hidden">
-    <div class="mission-header">🌐 MISSION 05: 외래어 발음 조사 & 나만의 표준 발음 제정</div>
-    <div class="info-box">교과서 5번 활동입니다. 표준 발음이 아직 정해지지 않은 외래어에 대해 나만의 표준 발음과 근거를 제시해 주세요.</div>
+    <div class="mission-header">🌐 MISSION 04: 외래어 발음 조사 & 나만의 표준 발음 제정</div>
+    <div class="info-box">교과서 활동입니다. 표준 발음이 아직 정해지지 않은 외래어에 대해 나만의 표준 발음과 근거를 제시해 주세요.</div>
 
     <div class="grid-2">
       <div class="card-item">
@@ -401,17 +324,17 @@
     <div id="err-m5" class="msg-error hidden"></div>
   </div>
 
-  <!-- STAGE 7: 임명장 & 전체 복습 화면 -->
-  <div id="stage-7" class="hidden">
+  <!-- STAGE 6: 임명장 & 전체 복습 화면 -->
+  <div id="stage-6" class="hidden">
     <h2 style="text-align: center; color: var(--primary); margin-bottom: 16px;">🎖️ 1급 국어 수사관 임명장 🎖️</h2>
     <div class="info-box" style="background:#F8FAFC; border: 2px solid #CBD5E1; color: var(--text); padding: 18px;">
       <h3 style="text-align: center; margin-bottom: 14px; color: var(--primary);">[ 감일고 2학년 국어 수사대 공식 임명장 ]</h3>
       <p>• <b>학 번:</b> <span id="res-id"></span></p>
       <p>• <b>성 명:</b> <span id="res-name"></span> 수사관</p>
-      <p>• <b>최종 수사 점수:</b> <span id="res-score"></span> / 130 점 🌟</p>
+      <p>• <b>최종 수사 점수:</b> <span id="res-score"></span> / 105 점 🌟</p>
       <hr style="margin: 12px 0; border: 0; border-top: 1px dashed #CBD5E1;">
       <p style="line-height: 1.7;">
-        위 학생은 음운의 교체, 탈락, 첨가, 축약은 물론 한글 자모의 발음 특례와 소리의 장단음까지
+        위 학생은 음운의 교체, 탈락, 첨가, 축약은 물론 한글 자모의 발음 특례까지
         교과서의 모든 표준 발음 사건을 완벽한 논리와 추리력으로 해결하였으므로, 
         본 수사대 최고의 명예인 <b>『1급 국어 수사관』</b>으로 임명합니다!
       </p>
@@ -437,11 +360,6 @@
         <h4 style="color: var(--primary);">💬 활동 3: 자모의 발음 특례 (제16항)</h4>
         <p>• 디귿, 지읒, 치읓, 티읕, 히읗: 모음 조사 앞 <code>[ㅅ]</code> 연음 ➔ [디그시], [지으시], [치으시], [티으시], [히으시]</p>
         <p>• 키읔, 피읖: 그대로 연음 ➔ [키으기], [피으비]</p>
-        <hr style="margin: 10px 0; border: 0; border-top: 1px solid var(--border);">
-        <h4 style="color: var(--primary);">⏳ 활동 4: 소리의 길이 (제6·7항)</h4>
-        <p>• 질문하는 묻고: <code>[묻:꼬]</code> (긴소리) / 파묻는 묻고: <code>[묻꼬]</code> (짧은소리)</p>
-        <p>• 대영의 마지막 말: 첫 번째 묻는 = <code>[문는]</code> (짧은소리) / 두 번째 묻는 = <code>[문:는]</code> (긴소리)</p>
-        <p>• 제7항 단음화: 눈보라(긴소리) ↔ 첫눈(짧은소리), 말씀(긴소리) ↔ 혼잣말(짧은소리), 벌리다(긴소리) ↔ 떠벌리다(짧은소리), 감다(긴소리) ↔ 감으니·감기다(짧은소리), 밟다(긴소리) ↔ 밟으면·밝히다(짧은소리)</p>
       </div>
     </details>
 
@@ -470,7 +388,6 @@
     return false;
   });
 
-  // 🚨 개발자 도구를 억지로 열었을 때 무한 일시정지(Debugger) 트랩
   setInterval(function() {
     debugger;
   }, 100);
@@ -523,16 +440,6 @@
     { j: "티읕", ans_i: "티으시", ans_ul: "티으슬", ans_e: "티으세" },
     { j: "피읖", ans_i: "피으비", ans_ul: "피으블", ans_e: "피으베" },
     { j: "히읗", ans_i: "히으시", ans_ul: "히으슬", ans_e: "히으세" }
-  ];
-
-  // 4번 활동 12개 단어
-  const length_quiz = [
-    { w: "눈보라", ans: "긴소리" }, { w: "첫눈", ans: "짧은소리" },
-    { w: "말씀", ans: "긴소리" }, { w: "혼잣말", ans: "짧은소리" },
-    { w: "벌리다", ans: "긴소리" }, { w: "떠벌리다", ans: "짧은소리" },
-    { w: "감다", ans: "긴소리" }, { w: "감으니", ans: "짧은소리" },
-    { w: "감기다", ans: "짧은소리" }, { w: "밟다", ans: "긴소리" },
-    { w: "밟으면", ans: "짧은소리" }, { w: "밝히다", ans: "짧은소리" }
   ];
 
   // 초기화 렌더링
@@ -606,35 +513,20 @@
         </div>
       `;
     });
-
-    // 4 렌더링
-    const boxLen = document.getElementById("box-len");
-    boxLen.innerHTML = "";
-    length_quiz.forEach((it, idx) => {
-      boxLen.innerHTML += `
-        <div>
-          <label>${it.w}</label>
-          <select id="len_${idx}">
-            <option value="긴소리">긴소리</option>
-            <option value="짧은소리">짧은소리</option>
-          </select>
-        </div>
-      `;
-    });
   }
 
   function setStage(stageNum) {
     currentStage = stageNum;
-    for (let i = 0; i <= 7; i++) {
+    for (let i = 0; i <= 6; i++) {
       const s = document.getElementById(`stage-${i}`);
       if (s) s.classList.toggle("hidden", i !== stageNum);
     }
     const statusBar = document.getElementById("status-bar");
-    if (stageNum > 0 && stageNum < 7) {
+    if (stageNum > 0 && stageNum < 6) {
       statusBar.classList.remove("hidden");
       document.getElementById("txt-badge").innerText = `🎖️ ${studentId} ${userName} 수사관`;
       document.getElementById("txt-score").innerText = `누적 수사 점수: ${userScore}점 🌟`;
-      const pct = Math.min(100, Math.round(((stageNum - 1) / 6) * 100));
+      const pct = Math.min(100, Math.round(((stageNum - 1) / 5) * 100));
       document.getElementById("bar-fill").style.width = `${pct}%`;
     } else {
       statusBar.classList.add("hidden");
@@ -738,7 +630,7 @@
     }
   }
 
-  // 3 검증
+  // 3 검증 (완료 후 바로 외래어 미션인 Stage 5로 이동)
   function checkMission3() {
     const reason = document.getElementById("q3_reason").value;
     const reasonOk = (reason === "구개음화");
@@ -769,46 +661,7 @@
     }
   }
 
-  // 4 검증
-  function checkMission4() {
-    const askM = document.getElementById("m4_ask_m").value;
-    const askS = document.getElementById("m4_ask_s").value;
-    const buryM = document.getElementById("m4_bury_m").value;
-    const buryS = document.getElementById("m4_bury_s").value;
-    const mun1 = document.getElementById("m4_mun1").value;
-    const mun2 = document.getElementById("m4_mun2").value;
-
-    const part1Ok = (
-      askM === "질문하다" && askS === "긴소리 [묻:꼬]" &&
-      buryM === "파묻다" && buryS === "짧은소리 [묻꼬]" &&
-      mun1 === "짧은소리 [문는]" && mun2 === "긴소리 [문:는]"
-    );
-
-    let part2Ok = true;
-    let wrongs = [];
-    length_quiz.forEach((it, idx) => {
-      const val = document.getElementById(`len_${idx}`).value;
-      if (val !== it.ans) {
-        part2Ok = false;
-        wrongs.push(`${it.w} (정답: ${it.ans})`);
-      }
-    });
-
-    const errBox = document.getElementById("err-m4");
-    if (part1Ok && part2Ok) {
-      errBox.classList.add("hidden");
-      userScore += 25;
-      setStage(6);
-    } else {
-      let errs = [];
-      if (!part1Ok) errs.push("대화 분석(대영: 질문/긴소리, 부연: 파묻다/짧은소리, 묻는: 첫 번째=[문는], 두 번째=[문:는])을 바르게 선택해 주세요.");
-      if (!part2Ok) errs.push(`12개 단어 장단음 판별 오답: ${wrongs.join(", ")}`);
-      errBox.innerText = `❌ 오차가 발견되었습니다:\n- ` + errs.join("\n- ");
-      errBox.classList.remove("hidden");
-    }
-  }
-
-  // 5 제출 및 구글 시트 전송
+  // 4(외래어) 제출 및 최종 임명장(Stage 6) 전송
   function submitFinalReport() {
     const v1 = document.querySelector('input[name="m5_v1"]:checked').value;
     const v2 = document.querySelector('input[name="m5_v2"]:checked').value;
@@ -848,7 +701,7 @@
     document.getElementById("res-id").innerText = studentId;
     document.getElementById("res-name").innerText = userName;
     document.getElementById("res-score").innerText = userScore;
-    setStage(7);
+    setStage(6);
   }
 
   function resetToStage(sNum) {
